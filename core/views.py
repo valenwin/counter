@@ -18,7 +18,6 @@ class ImagesListView(ListView):
         return Image.objects.all()
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        """With pagination for posts list view"""
         context = super(ImagesListView, self).get_context_data(**kwargs)
         images = self.get_queryset()
         context['images'] = images
@@ -26,6 +25,8 @@ class ImagesListView(ListView):
 
 
 class ImageDetailView(DetailView):
+    model = Image
+    context_object_name = 'images'
     template_name = 'image.html'
 
     def get_context_data(self, *, object_list=None, **kwargs):

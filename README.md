@@ -4,8 +4,9 @@
 
 `pip install -r requirements.txt`
 
-2 - Migrate db models to PostgreSQL:<br />
+2 - Migrate db models to sqlite3:<br />
 `python manage.py migrate`
+`python manage.py loaddata data.json`
 
 3 - Run Redis server:<br />
 `redis-server`

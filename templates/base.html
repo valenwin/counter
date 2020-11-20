@@ -1,3 +1,5 @@
+{% load thumbnail %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,8 +8,36 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Counter</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Hello World!</h1>
+
+<h1 style="text-align: center">Counter</h1>
+
+{% block content %}
+<div class="col-md-12 mylisting">
+    <div class="row ml-1">
+        {% for image in images %}
+            <div class="col-md-3 col-xs-12">
+                <div class="box">
+                    <img src="{{ image.url }}" alt="" width="250" height="250">
+                    <a href="{{ image.get_absolute_url }}">
+                        <div class="box-heading3" style="text-align: left;">
+                            <p style="font-size: 20px;">{{ image.title|upper }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="clearfix"></div>
+</div>
 </body>
 </html>
+{% endblock %}
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
