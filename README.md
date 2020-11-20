@@ -5,10 +5,10 @@
 `pip install -r requirements.txt`
 
 2 - Migrate db models to PostgreSQL:<br />
-`python3 manage.py migrate`
+`python manage.py migrate`
 
 3 - Run Redis server:<br />
 `redis-server`
 
 4 - Run app:<br />
-`python3 manage.py runserver`
+`python manage.py runserver`
